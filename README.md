@@ -1,3 +1,20 @@
+# Forked by Hokyun-Lee
+import KSY hand (https://github.com/roro07ksy/hand_urdf_discription) to mujoco,
+work with https://github.com/Hokyun-Lee/mujoco_ros_sim/tree/master
+
+##
+##
+##
+##
+##
+##
+##
+##
+##
+##
+
+
+
 # hand_urdf_discription
 
 ![Screenshot from 2022-06-03 16-23-37](https://user-images.githubusercontent.com/40191598/171807711-2bd708b4-ef03-4bdb-b5b6-6e91d5b93c4c.png)
