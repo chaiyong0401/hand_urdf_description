@@ -15,7 +15,7 @@ mcp_fe_max = 0.65
 if __name__ == '__main__':
     pub = rospy.Publisher('/hand_joint_command', JointState , queue_size = 1)
     rospy.init_node('hand_command_tester', anonymous=True)
-    rate = rospy.Rate(100)
+    rate = rospy.Rate(400)
 
     while not rospy.is_shutdown() :
         joint_8.header = Header()
