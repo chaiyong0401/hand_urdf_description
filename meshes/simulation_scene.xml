@@ -1,5 +1,5 @@
 <mujoco model="scene">
-    <option timestep='0.0025' iterations="50" tolerance="1e-5" solver="Newton" jacobian="dense" cone="elliptic" noslip_iterations="30" noslip_tolerance="1e-5"/>
+    <option timestep='0.01' iterations="50" tolerance="1e-5" solver="Newton" jacobian="dense" cone="elliptic" noslip_iterations="30" noslip_tolerance="1e-5"/>
     <size njmax="8000" nconmax="4000"/>
     <compiler angle="radian" meshdir="../meshes/" balanceinertia="true"/>
     <default>
@@ -41,7 +41,7 @@
         </default>  <!-- rated torque = 5 Nm -->
 
         <default class="ksy_joint">
-            <joint damping="0.00002" frictionloss="0.001"/>
+            <joint damping="0.01" frictionloss="0.01"/>
         </default>  <!-- ksy hand -->
     </default>
 

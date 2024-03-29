@@ -2,7 +2,11 @@
     <include file="simulation_scene.xml"/>
     <!-- <compiler angle="radian" /> -->
     <!-- <size njmax="500" nconmax="100" /> -->
-    <option gravity="0 0 0"/>
+    <!-- <option gravity="0 0 0"/> -->
+
+	<default class="position">
+			<position ctrllimited="true" forcelimited="false" forcerange="-0.01 0.01" ctrlrange="-3 3" kp="1.0"></position>
+    </default>
     <asset>
         <mesh name="base_link" file="base_link.stl" scale="0.001 0.001 0.001" />
         <mesh name="mcp2_1" file="mcp2_1.stl" scale="0.001 0.001 0.001" />
@@ -37,6 +41,7 @@
         <material name='geom' texture="texgeom" texuniform="true"/>
         <material name='MatPlane' reflectance='0.3' texture="texplane" texrepeat="1 1" texuniform="true"/>
         <material name='MatPlane2' reflectance='0.3' />
+
     </asset>
     <worldbody>
         <!-- <geom name="ground" type="plane" pos="0 0 0" size="1 1 .05" rgba="0.7 0.6 0.5 1" material="MatPlane2" group="3"/> -->
@@ -69,7 +74,7 @@
                 <body name="pp2_1" pos="-0.008953 0.01468 0.010509">
                     <inertial pos="0.00558963 0.0222004 0.00172825" quat="0.707107 0.707107 0 0" mass="0.0125687" diaginertia="3e-06 3e-06 2e-06" />
                     <joint name="mcp2" pos="0 0 0" axis="-0.996195 -0.085832 -0.015134" limited="true" range="-3.14 3.14" class="ksy_joint" />
-                    <geom pos="0.037975 -0.114727 0.00277" type="mesh" rgba="0.7 0.7 0.7 1" mesh="pp2_1" contype="2" conaffinity="2"/>
+                    <geom pos="0.037975 -0.114727 0.00277" type="mesh" rgba="0.7 0.7 0.7 1" mesh="pp2_1" contype="1" conaffinity="1"/>
                     <body name="mp2_1" pos="-0.003931 0.039809 -3.3e-05">
                         <inertial pos="0.00676453 0.0144678 0.00126187" quat="0.707107 0.707107 0 0" mass="0.0129842" diaginertia="2e-06 2e-06 1e-06" />
                         <joint name="pip2" pos="0 0 0" axis="-0.996195 -0.085832 -0.015134"  limited="true" range="-3.14 3.14" class="ksy_joint"/>
@@ -148,11 +153,11 @@
                     <body name="mp4_1" pos="-0.012008 0.041183 0.000209">
                         <inertial pos="0.00917463 0.0130938 0.00102012" quat="0.707107 0.707107 0 0" mass="0.0129842" diaginertia="2e-06 2e-06 1e-06" />
                         <joint name="pip4" pos="0 0 0" axis="-1 0 0" limited="true" range="-3.14 3.14" class="ksy_joint"/>
-                        <geom pos="-0.026748 -0.148828 0.00381" type="mesh" rgba="0.7 0.7 0.7 1" mesh="mp4_1" />
+                        <geom pos="-0.026748 -0.148828 0.00381" type="mesh" rgba="0.7 0.7 0.7 1" mesh="mp4_1" contype="2" conaffinity="2"/>
                         <body name="dp4_1" pos="0.015852 0.026738 -0.000223">
                             <inertial pos="-0.00429269 0.0142959 -0.000246515" mass="0.0151738" diaginertia="1e-06 1e-06 1e-06" />
                             <joint name="dip4" pos="0 0 0" axis="-0.996195 0.085832 0.015134" limited="true" range="-3.14 3.14" class="ksy_joint"/>
-                            <geom pos="-0.0426 -0.175566 0.004033" type="mesh" rgba="0.7 0.7 0.7 1" mesh="dp4_1" />
+                            <geom pos="-0.0426 -0.175566 0.004033" type="mesh" rgba="0.7 0.7 0.7 1" mesh="dp4_1" contype="3" conaffinity="3"/>
                         </body>
                     </body>
                 </body>
@@ -165,7 +170,7 @@
         </body>
     </worldbody>
     <actuator>
-        <motor name="aa2_Motor" joint="aa2"   ctrlrange="-1000 1000"/>
+        <!-- <motor name="aa2_Motor" joint="aa2"   ctrlrange="-1000 1000"/>
         <motor name="mcp2_Motor" joint="mcp2" ctrlrange="-1000 1000"/>
         <motor name="pip2_Motor" joint="pip2" ctrlrange="-1000 1000"/>
         <motor name="dip2_Motor" joint="dip2" ctrlrange="-1000 1000"/>
@@ -180,7 +185,23 @@
         <motor name="aa4_Motor" joint="aa4"   ctrlrange="-1000 1000"/>
         <motor name="mcp4_Motor" joint="mcp4" ctrlrange="-1000 1000"/>
         <motor name="pip4_Motor" joint="pip4" ctrlrange="-1000 1000"/>
-        <motor name="dip4_Motor" joint="dip4" ctrlrange="-1000 1000"/>
-       
+        <motor name="dip4_Motor" joint="dip4" ctrlrange="-1000 1000"/> -->
+
+        <position name="aa2_Motor" joint="aa2"   class="position"/>
+        <position name="mcp2_Motor" joint="mcp2" class="position"/>
+        <position name="pip2_Motor" joint="pip2" class="position"/>
+        <position name="dip2_Motor" joint="dip2" class="position"/>
+        <position name="aa1_Motor" joint="aa1"   class="position"/>
+        <position name="mcp1_Motor" joint="mcp1" class="position"/>
+        <position name="pip1_Motor" joint="pip1" class="position"/>
+        <position name="dip1_Motor" joint="dip1" class="position"/>
+        <position name="aa3_Motor" joint="aa3"   class="position"/>
+        <position name="mcp3_Motor" joint="mcp3" class="position"/>
+        <position name="pip3_Motor" joint="pip3" class="position"/>
+        <position name="dip3_Motor" joint="dip3" class="position"/>
+        <position name="aa4_Motor" joint="aa4"   class="position"/>
+        <position name="mcp4_Motor" joint="mcp4" class="position"/>
+        <position name="pip4_Motor" joint="pip4" class="position"/>
+        <position name="dip4_Motor" joint="dip4" class="position"/>
     </actuator>
 </mujoco>
