@@ -1,4 +1,4 @@
-# Forked by Hokyun-Lee
+# Forked by Chaiyong-Mun
 import KSY hand (https://github.com/roro07ksy/hand_urdf_discription) to mujoco,
 work with https://github.com/Hokyun-Lee/mujoco_ros_sim/tree/master
 
