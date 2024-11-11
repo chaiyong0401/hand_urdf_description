@@ -22,6 +22,9 @@ update left hand
 
 ![Screenshot from 2022-06-03 16-23-37](https://user-images.githubusercontent.com/40191598/171807711-2bd708b4-ef03-4bdb-b5b6-6e91d5b93c4c.png)
 
+# left_hand_urdf_discription
+
+![left_hand_display](https://github.com/user-attachments/assets/9afa8be0-f671-4913-8692-9be10a9613bc)
 
 
 
