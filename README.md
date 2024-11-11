@@ -4,7 +4,7 @@ work with https://github.com/Hokyun-Lee/mujoco_ros_sim/tree/master
 import Hokyun-Lee right hand (https://github.com/Hokyun-Lee/hand_urdf_discription.git)
 
 # Update
-update left hand 
+update left hand with new hand base
 ##
 ##
 ##
@@ -32,6 +32,9 @@ update left hand
 ```
 roslaunch hand_urdf_discription hand_display.launch
 ```
+```
+roslaunch hand_urdf_discription left_hand_display.launch
+```
 
 ### Finger index
 * 1 : Thumb
@@ -47,7 +50,7 @@ Please check example codes below.
 
 
 
-### Example code
+### Right_hand Example code
 #### Flexion-Extension mode
 ```
 rosrun hand_urdf_description command_tester.py
